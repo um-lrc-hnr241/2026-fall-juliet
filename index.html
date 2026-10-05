@@ -3,30 +3,52 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Our Portfolio Site</title>
+  <title>Traveling the Yellow Brick Rope</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
 
   <header class="site-header">
-    <p class="site-title"><a href="index.html">Our Portfolio Site</a></p>
-    <nav aria-label="Main">
+    <p class="site-title"><a href="index.html">Yellow Brick Rope</a></p>
+    <nav aria-label="Main navigation">
       <ul>
-        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="#journey">The journey</a></li>
+        <li><a href="#voices">Our voices</a></li>
       </ul>
     </nav>
   </header>
 
   <main id="main">
-    <h1>Welcome</h1>
-    <p>This is your group's starter site. Nothing here is final.</p>
-    <p>Fill in your planning Doc, then leave a comment that starts with
-      <code>@agent build</code> to have the agent replace this page with your own.</p>
+    <section class="hero" aria-labelledby="page-title">
+      <p class="eyebrow">A collaborative writing journey</p>
+      <h1 id="page-title">Traveling the <span>Yellow Brick Rope</span></h1>
+      <p class="hero-intro">A winding path can hold many stories. We’re following one thread together, gathering thoughts and discoveries along the way.</p>
+      <a class="button-link" href="#journey">Follow the journey</a>
+      <div class="woven-line" aria-hidden="true"></div>
+    </section>
+
+    <section class="content-section" id="journey" aria-labelledby="journey-title">
+      <h2 id="journey-title">The path is still unfolding</h2>
+      <p>There’s no single map for a shared journey. Each turn gives us a chance to look closer, listen to one another, and decide what to carry onward.</p>
+      <ol class="journey-steps">
+        <li><h3>Step onto the path</h3><p>Begin with a question, an image, or a detail worth noticing.</p></li>
+        <li><h3>Notice the crossings</h3><p>Follow the different voices and ideas that meet along the way.</p></li>
+        <li><h3>Carry something forward</h3><p>Gather what the journey has changed, challenged, or made newly possible.</p></li>
+      </ol>
+      <blockquote class="guiding-quote">
+        <p>We follow the yellow brick rope—not to arrive unchanged, but to notice what the journey makes of us.</p>
+      </blockquote>
+    </section>
+
+    <section class="content-section voices-section" id="voices" aria-labelledby="voices-title">
+      <h2 id="voices-title">A place for many voices</h2>
+      <p>This portfolio will bring our writing together as the collection grows. Pieces will be credited with each writer’s first name, leaving room for every voice to be heard.</p>
+    </section>
   </main>
 
   <footer class="site-footer">
-    <p>Built by our group with help from an AI agent.</p>
+    <p>A shared path, made one story at a time.</p>
   </footer>
 </body>
 </html>
