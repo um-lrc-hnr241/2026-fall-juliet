@@ -1,10 +1,11 @@
 :root {
-  --text: #1f2933;
-  --muted: #52606d;
-  --background: #fdfcf9;
-  --accent: #1d5fa8;
-  --border: #d9d4c7;
-  --max-width: 46rem;
+  --text: #25312d;
+  --muted: #4c5b53;
+  --background: #fbf7eb;
+  --accent: #245344;
+  --gold: #f0c45a;
+  --border: #d8cfb9;
+  --max-width: 72rem;
 }
 
 *,
@@ -37,6 +38,7 @@ main,
   justify-content: space-between;
   gap: 1rem;
   border-bottom: 1px solid var(--border);
+  min-height: 5rem;
 }
 
 .site-title {
@@ -63,13 +65,143 @@ a {
 }
 
 a:focus-visible {
-  outline: 3px solid var(--accent);
-  outline-offset: 2px;
+  outline: 3px solid #704900;
+  outline-offset: 3px;
+}
+
+.hero a:focus-visible {
+  outline-color: #fffdf6;
 }
 
 h1 {
-  font-size: 2.25rem;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 1.08;
+  max-width: 14ch;
+}
+
+h2 {
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
   line-height: 1.2;
+}
+
+h3 {
+  font-size: 1.2rem;
+  line-height: 1.3;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  margin: 1rem 0 2rem;
+  padding: clamp(2rem, 6vw, 4.5rem);
+  padding-bottom: 5rem;
+  border-radius: 0.5rem;
+  color: #fffdf6;
+  background: #24483c;
+}
+
+.hero h1 span {
+  color: var(--gold);
+}
+
+.eyebrow {
+  margin: 0;
+  color: #f6d98d;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero-intro {
+  max-width: 42rem;
+  font-size: clamp(1.15rem, 2.5vw, 1.4rem);
+}
+
+.button-link {
+  display: inline-block;
+  margin-top: 0.75rem;
+  padding: 0.7rem 1rem;
+  border-radius: 0.25rem;
+  color: #25312d;
+  background: var(--gold);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.button-link:hover {
+  background: #ffdc7b;
+  text-decoration: underline;
+}
+
+.woven-line {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 1.2rem;
+  background: repeating-linear-gradient(135deg, transparent 0 8px, #f0c45a 8px 12px, #fff0bf 12px 15px, transparent 15px 23px);
+}
+
+.content-section {
+  padding: 1.5rem 0;
+}
+
+.journey-steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: journey;
+}
+
+.journey-steps li {
+  padding: 1.25rem;
+  border: 1px solid var(--border);
+  border-top: 0.25rem solid #9a6b12;
+  border-radius: 0.25rem;
+  background: #fffdf7;
+  counter-increment: journey;
+}
+
+.journey-steps li::before {
+  content: "0" counter(journey);
+  color: #704900;
+  font-weight: 700;
+}
+
+.journey-steps h3 {
+  margin: 0.5rem 0;
+}
+
+.journey-steps p {
+  margin-bottom: 0;
+}
+
+.guiding-quote {
+  margin: 2rem 0;
+  padding: 0.5rem 1.5rem;
+  border-left: 0.35rem solid #9a6b12;
+  color: #34463c;
+  font-size: clamp(1.3rem, 3vw, 1.8rem);
+  font-style: italic;
+}
+
+.guiding-quote p {
+  margin: 0;
+}
+
+.voices-section {
+  margin-top: 1rem;
+  padding: 1.5rem;
+  border-radius: 0.25rem;
+  background: #f0eadb;
+}
+
+.site-title {
+  font-size: 1.2rem;
 }
 
 img,
@@ -92,6 +224,18 @@ video {
 .skip-link:focus {
   left: 1rem;
   top: 1rem;
+  z-index: 2;
   padding: 0.5rem 0.75rem;
+  color: var(--text);
   background: var(--background);
+}
+
+@media (max-width: 42rem) {
+  .journey-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    margin-top: 0;
+  }
 }
