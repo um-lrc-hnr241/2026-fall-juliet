@@ -5,6 +5,7 @@
   const previous = document.getElementById("previous-stop");
   const next = document.getElementById("next-stop");
   const scene = document.querySelector(".travel-scene");
+  const stopLinks = Array.from(document.querySelectorAll(".journey-stops a"));
   if (!cards.length || !progress || !previous || !next) return;
 
   let current = 0;
@@ -14,10 +15,20 @@
     cards.forEach((card, cardIndex) => {
       card.hidden = cardIndex !== current;
     });
-    progress.textContent = `Stop ${current + 1} of ${cards.length}`;
+    const stopName = cards[current].querySelector(".stop-kicker").textContent.replace(/^\d+\s*·\s*/, "");
+    progress.textContent = `Stop ${current + 1} of ${cards.length}: ${stopName}`;
+    stopLinks.forEach((link, linkIndex) => {
+      if (linkIndex === current) link.setAttribute("aria-current", "step");
+      else link.removeAttribute("aria-current");
+    });
     previous.disabled = current === 0;
     next.disabled = current === cards.length - 1;
-    if (scene) scene.dataset.stop = String(current + 1);
+    if (scene) {
+      scene.dataset.stop = String(current + 1);
+      scene.classList.remove("is-moving");
+      void scene.offsetWidth;
+      scene.classList.add("is-moving");
+    }
     if (moveFocus) cards[current].querySelector("h3").focus({ preventScroll: true });
   }
 
