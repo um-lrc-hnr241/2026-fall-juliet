@@ -26,6 +26,7 @@
       <div class="kansas-copy">
         <p class="eyebrow">A collaborative philosophy portfolio</p>
         <h1 id="page-title">We’re Off to See <span>Consciousness</span></h1>
+        <p class="hero-subtitle">Follow the yellow-brick rope.</p>
         <p class="hero-intro">A journey through Oz, Westworld, and the tangled questions of consciousness. Follow the yellow-brick rope: one strand, one choice, one stop at a time.</p>
         <a class="button-link" href="#journey">Step onto the rope <span aria-hidden="true">→</span></a>
         <p class="visual-note">First-person journey · 8 stops · 6 voices</p>
@@ -45,7 +46,7 @@
         <span class="scene-marker marker-left"></span><span class="scene-marker marker-right"></span>
       </div>
       <div class="journey-console">
-        <p class="journey-progress" id="journey-progress">Stop 1 of 8</p>
+        <p class="journey-progress" id="journey-progress" aria-live="polite" aria-atomic="true">Stop 1 of 8</p>
         <ol class="journey-stops" aria-label="Journey stops">
           <li><a href="#stop-kansas">Kansas</a></li>
           <li><a href="#stop-hostkinland">Host-kinland</a></li>
@@ -93,7 +94,7 @@
             <a class="text-link" href="#voices">Explore the travelers’ collected work</a>
           </article>
         </div>
-        <div class="journey-controls" aria-label="Journey controls">
+        <div class="journey-controls" role="group" aria-label="Journey controls">
           <button class="travel-button" id="previous-stop" type="button">← Previous</button>
           <button class="travel-button travel-forward" id="next-stop" type="button">Walk forward →</button>
         </div>
